@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class Order{
+    String orderId;
+}
+class StandardDelivery extends Order{
+    double weight;
+    double ratePerKg;
+    void calculate(){
+        System.out.println(orderId);
+        System.out.println(weight*ratePerKg);
+    }
+}
+class ExpressDelivery extends Order{
+    double weight;
+    void calculate(){
+        System.out.println(orderId);
+        System.out.println(weight*50);
+    }
+}
+public class Main{
+    public static void main(String[] aegs){
+        Scanner sc=new Scanner(System.in);
+        String orderId=sc.nextLine();
+        int type=sc.nextInt();
+        if(type==1){
+            StandardDelivery s=new StandardDelivery();
+            s.orderId=orderId;
+            s.weight=sc.nextDouble();
+            s.ratePerKg=sc.nextDouble();
+            s.calculate();
+        }else if (type==2){
+            ExpressDelivery e= new ExpressDelivery();
+            e.orderId=orderId;
+            e.weight=sc.nextDouble();
+            e.calculate();
+        }else{
+            System.out.println("Invalid input");
+        }
+    }
+}
+ 
