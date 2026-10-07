@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str1=sc.nextLine();
+        int roll_no=sc.nextInt();
+        sc.nextLine();
+        String str2=sc.nextLine();
+        double mark=sc.nextDouble();
+        boolean passed=sc.nextBoolean();
+        System.out.println(str1);
+         System.out.println(roll_no);
+        System.out.println(str2);
+        System.out.println(mark);
+
+        System.out.println(passed);
+
+
+    }
+}
