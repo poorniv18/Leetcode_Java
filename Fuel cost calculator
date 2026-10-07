@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Vehicle{
+    double distance;
+}
+class Fuel extends Vehicle{
+    double fuelRate;
+    double calculateTotalFuelCost(){
+        return distance*fuelRate;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        Fuel obj=new Fuel();
+        obj.distance=sc.nextDouble();
+        obj.fuelRate=sc.nextDouble();
+        if(obj.distance<1||obj.fuelRate<1){
+            System.out.println("Invalid input");
+        }else{
+            System.out.println(obj.calculateTotalFuelCost());
+        }
+        sc.close();
+    }
+}
+ 
