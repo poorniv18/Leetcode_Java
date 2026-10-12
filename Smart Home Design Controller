@@ -1,0 +1,75 @@
+import java.util.Scanner;
+interface Device{
+    int getPower();
+}
+class Light implements Device{
+    int power;
+    String status;
+    Light(int power,String status){
+        this.power=power;
+        this.status=status;
+    }
+    public int getPower(){
+        return status.equals("ON")?power:0;
+    }
+}
+class Fan implements Device{
+    int power;
+    String status;
+    Fan(int power,String status){
+        this.power=power;
+        this.status=status;
+    }
+    public int getPower(){
+        return status.equals("ON")?power:0;
+    }
+}
+class AC implements Device{
+    int power;
+    String status;
+    AC(int power,String status){
+        this.power=power;
+        this.status=status;
+    }
+    public int getPower(){
+        return status.equals("ON")?power:0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n<=0){
+            System.out.println("Invalid input");
+            sc.close();
+            return;
+        }
+        int totalPower=0;
+        for(int i=0;i<n;i++){
+            String type=sc.next();
+            int power=sc.nextInt();
+            String status=sc.next();
+            if(power<=0||!(type.equals("Light")||type.equals("Fan")||type.equals("AC")||!(status.equals("ON")||status.equals("OFF")))){
+                System.out.println("Invalid input");
+                sc.close();
+                return;
+            }
+            Device device;
+            switch(type){
+                case "Light":
+                device=new Light(power,status);
+                break;
+                case"Fan":
+                device=new Fan(power,status);
+                break;
+                default:
+                device=new AC(power,status);
+                break;
+            }
+            totalPower+=device.getPower();
+        }
+        System.out.println(totalPower);
+        sc.close();
+    }
+}
+ 
