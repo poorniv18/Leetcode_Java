@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        if(!sc.hasNextDouble()){
+            System.out.println("Invalid input");
+            return;
+
+        }
+        double distance=sc.nextDouble();
+        if(distance<=0){
+            System.out.println("Invalid input");
+            return;
+        }
+        if(!sc.hasNextBoolean()||!sc.hasNextBoolean()||!sc.hasNextBoolean()){
+            System.out.println("Invalid input");
+            return;
+        }
+            boolean isNight=sc.nextBoolean();
+            boolean includeToll=sc.nextBoolean();
+            boolean includeWaitingTime=sc.nextBoolean();
+            double ratePerMile=isNight?20.0:15.0;
+            double totalFare=distance*ratePerMile;
+            if(includeToll){
+                totalFare+=50.0;
+                }
+                if(includeWaitingTime){
+                    totalFare+=100.0;
+                }
+                                System.out.printf("%.2f\n",totalFare);
+                sc.close();
+        }
+    }
+
+     
