@@ -1,0 +1,38 @@
+import java.util.Scanner;
+interface TextProcessor{
+    String process(String text);
+}
+class UppercaseProcessor implements TextProcessor{
+    public String process(String text){
+        return text.toUpperCase();
+    }
+}
+class ReverseProcessor implements TextProcessor{
+    public String process(String text){
+        return new
+        StringBuilder(text).reverse().toString();
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String text=sc.nextLine();
+        String operation=sc.nextLine().trim();
+        TextProcessor processor;
+        switch(operation){
+            case "Uppercase":
+            processor=new UppercaseProcessor();
+            break;
+            case "Reverse":
+            processor=new ReverseProcessor();
+            break;
+            default:
+            System.out.println("Invalid input");
+            sc.close();
+            return;
+            }
+            System.out.println(processor.process(text));
+            sc.close();
+            }
+        }
+    
