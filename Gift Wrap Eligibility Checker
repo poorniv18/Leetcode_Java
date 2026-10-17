@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        if(sc.hasNextInt()){
+            int price=sc.nextInt();
+            if(price<=0){
+                System.out.println("Invalid Input");
+            }
+            else if(price>100000){
+                System.out.println("Price Error");
+            }
+            else if(price>=200 && price<=2000){
+                System.out.println("Gift Wrap Available");
+            }
+            else{
+                System.out.println("Gift Wrap Not Available");
+            }
+        }
+        sc.close();
+    }
+}
