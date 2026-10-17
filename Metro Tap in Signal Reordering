@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        if(sc.hasNextInt()){
+            int n=sc.nextInt();
+            if(n<=0){
+                System.out.println("Invalid Input");
+                sc.close();
+                return;
+            }
+            ArrayList<Integer>nonNegative=new ArrayList<>();
+            ArrayList<Integer>negative=new ArrayList<>();
+            boolean isValid=true;
+        
+        for(int i=0;i<n;i++){
+            if(sc.hasNextInt()){
+                int val=sc.nextInt();
+                if(val<-1000||val>1000){
+                    isValid=false;
+                }
+                if(val>=0){
+                    nonNegative.add(val);
+                }else{
+                    negative.add(val);
+                }
+            }else {
+                isValid=false;
+                }
+            }
+                if(!isValid){
+                    System.out.println("Invalid Input");
+                    }
+                else{
+                    StringBuilder sb=new StringBuilder();
+                    for(int num:nonNegative){
+                        sb.append(num).append(" ");
+                    }
+                    for(int num:negative){
+                        sb.append(num).append(" ");
+                    }
+                    System.out.println(sb.toString().trim());
+                }
+            }
+            sc.close();
+        }
+}
+        
+
+
+ 
