@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        if(sc.hasNextInt()){
+            int units=sc.nextInt();
+            if(units<=0){
+                System.out.println("Invalid Input");
+            }else{
+                int totalBill=0;
+                if(units<=50){
+                    totalBill=units*5;
+                }else{
+                    totalBill=(50*5)+((units-50)*8);
+                    }
+                    System.out.println(totalBill);
+            }
+        }
+        sc.close();
+    }
+}
+
